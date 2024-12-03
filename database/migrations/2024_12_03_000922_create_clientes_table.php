@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('nome');
             $table->string('cnpj', 14)->unique();
             $table->string('endereco', 100);
-            $table->boolean('status')->default(true);
 
             $table->timestamps();
             $table->softDeletes();

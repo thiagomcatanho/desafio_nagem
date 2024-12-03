@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('contatos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cliente_id');
+            $table->unsignedBigInteger('id_cliente');
             $table->string('nome_contato');
             $table->string('email_contato');
             $table->string('fone_contato', 11);
@@ -22,9 +22,9 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('cliente_id')->references('id')->on('clientes');
+            $table->foreign('id_cliente')->references('id')->on('clientes');
             
-            $table->unique(['email_contato', 'fone_contato', 'cliente_id']);
+            $table->unique(['email_contato', 'fone_contato', 'id_cliente']);
         });
     }
 
