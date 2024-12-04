@@ -1,0 +1,18 @@
+#suggestions {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    max-height: 150px;
+    width: 40%;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+#suggestions li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#suggestions li:hover {
+    background-color: #f0f0f0;
+}
