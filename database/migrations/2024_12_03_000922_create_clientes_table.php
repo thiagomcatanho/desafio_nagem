@@ -14,11 +14,13 @@ return new class extends Migration
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('cnpj', 14)->unique();
+            $table->string('cnpj', 14);
             $table->string('endereco', 100);
 
             $table->timestamps();
             $table->softDeletes();
+
+            $table->unique(['cnpj','deleted_at']);
         });
     }
 
